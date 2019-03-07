@@ -6,9 +6,9 @@ public class LongestPrefixMatcher {
     private int routesRead = 0;
     private RouteSet routeSet;
 
-  /**
-   * You can use this function to initialize variables.
-   */
+    /**
+     * You can use this function to initialize variables.
+     */
     public LongestPrefixMatcher() {
         List<Mask> masks = new ArrayList<>(Arrays.asList(
                 new Mask(24, 0xFF),
@@ -20,7 +20,7 @@ public class LongestPrefixMatcher {
 
         this.routeSet = new RouteSet(masks);
     }
-    
+
     /**
      * Looks up an IP address in the routing tables
      * @param ip The IP address to be looked up in integer representation
@@ -143,7 +143,7 @@ class RouteSet {
     }
 
     private int searchMatchUpwards(int ip) {
-        if (this.parent == null) {
+        if (this.parent == null || this.parent.last()) {
             return -1;
         }
 
@@ -156,7 +156,13 @@ class RouteSet {
         return this.parent.searchMatchUpwards(ip);
     }
 
+    public boolean last() {
+        return this.parent == null;
+    }
+
     private int findBestMatch(List<Route> routes, int ip) {
+        System.out.println("Best match lookup of size: " + routes.size());
+
         for(Route route : routes) {
             if (route.matches(ip)) {
                 return  route.getPort();
