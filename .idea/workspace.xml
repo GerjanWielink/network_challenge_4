@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="085c0430-5c0f-4519-bd2f-dfe662816364" name="Default Changelist" comment="" />
+    <list default="true" id="085c0430-5c0f-4519-bd2f-dfe662816364" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/expected_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/expected_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lookup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lookup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lpm/LongestPrefixMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lpm/LongestPrefixMatcher.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,39 +20,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lpm/LongestPrefixMatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="155" column="15" lean-forward="true" selection-start-line="151" selection-start-column="13" selection-end-line="155" selection-end-column="15" />
+            <state relative-caret-position="343">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
               <folding>
-                <element signature="e#800#801#0" expanded="true" />
-                <element signature="e#853#854#0" expanded="true" />
-                <element signature="e#3170#3171#0" expanded="true" />
-                <element signature="e#3200#3201#0" expanded="true" />
-                <element signature="e#3244#3245#0" expanded="true" />
-                <element signature="e#3318#3319#0" expanded="true" />
-                <element signature="e#3826#3827#0" expanded="true" />
-                <element signature="e#3861#3862#0" expanded="true" />
-                <element signature="e#3278#3279#0" expanded="true" />
-                <element signature="e#4250#4251#0" expanded="true" />
-                <element signature="e#4291#4292#0" expanded="true" />
+                <element signature="e#1976#1977#0" expanded="true" />
+                <element signature="e#2006#2007#0" expanded="true" />
+                <element signature="e#2050#2051#0" expanded="true" />
+                <element signature="e#2124#2125#0" expanded="true" />
+                <element signature="e#2780#2781#0" expanded="true" />
+                <element signature="e#2816#2817#0" expanded="true" />
+                <element signature="e#3524#3525#0" expanded="true" />
+                <element signature="e#4676#4677#0" expanded="true" />
+                <element signature="e#4689#4690#0" expanded="true" />
+                <element signature="e#4733#4734#0" expanded="true" />
+                <element signature="e#5568#5569#0" expanded="true" />
+                <element signature="e#5635#5636#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/expected_output.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lookup.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -56,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/framework/Framework.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1448">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="159">
+              <caret line="37" column="51" lean-forward="true" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
               <folding>
                 <element signature="e#819#820#0" expanded="true" />
                 <element signature="e#867#868#0" expanded="true" />
@@ -81,7 +68,11 @@
       <find>println</find>
       <find>oet</find>
       <find>print</find>
+      <find>33</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -90,15 +81,15 @@
         <option value="$PROJECT_DIR$/src/framework/Framework.java" />
         <option value="$PROJECT_DIR$/src/lpm/LongestPrefixMatcherLegacy.java" />
         <option value="$PROJECT_DIR$/src/lpm/LongestPrefixMatcherLegacy .java" />
-        <option value="$PROJECT_DIR$/lookup.txt" />
         <option value="$PROJECT_DIR$/expected_output.txt" />
+        <option value="$PROJECT_DIR$/lookup.txt" />
         <option value="$PROJECT_DIR$/src/lpm/LongestPrefixMatcher.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="639" />
-    <option name="y" value="8" />
+    <option name="x" value="-148" />
+    <option name="y" value="131" />
     <option name="width" value="1936" />
     <option name="height" value="1054" />
   </component>
@@ -107,28 +98,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="lpm_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lpm_java" type="462c0819:PsiDirectoryNode" />
+              <item name="network_challenge_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="network_challenge_4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lpm_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lpm_java" type="462c0819:PsiDirectoryNode" />
+              <item name="network_challenge_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="network_challenge_4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lpm_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lpm_java" type="462c0819:PsiDirectoryNode" />
+              <item name="network_challenge_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="network_challenge_4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lpm_java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lpm_java" type="462c0819:PsiDirectoryNode" />
+              <item name="network_challenge_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="network_challenge_4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="lpm" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -136,16 +128,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551984297869" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551989266474" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -208,34 +200,34 @@
       <updated>1551947812418</updated>
       <workItem from="1551947813754" duration="19538000" />
       <workItem from="1551977322576" duration="6228000" />
+      <workItem from="1551984251809" duration="4968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25766000" />
+    <option name="totallyTimeSpent" value="30734000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="707" y="0" width="1860" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.5007657" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4992343" visible="true" weight="0.15888889" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4992343" visible="true" weight="0.11963434" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="CheckStyle" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.32998884" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32995495" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32995495" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.39527026" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.42028984" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.39910814" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
@@ -285,6 +277,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/lpm/LongestPrefixMatcher.java</url>
+          <line>186</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/lpm/Route.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Comparable.java">
@@ -311,13 +315,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpm/LongestPrefixMatcherLegacy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpm/LongestPrefixMatcherLegacy.java" />
     <entry file="file://$PROJECT_DIR$/src/lpm/LongestPrefixMatcherLegacy .java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -325,17 +323,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/expected_output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lookup.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9679369">
-          <caret line="111" column="18" selection-start-line="111" selection-start-column="18" selection-end-line="111" selection-end-column="18" />
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/framework/Framework.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1448">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="159">
+          <caret line="37" column="51" lean-forward="true" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
           <folding>
             <element signature="e#819#820#0" expanded="true" />
             <element signature="e#867#868#0" expanded="true" />
@@ -343,36 +355,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/expected_output.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lookup.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lpm/LongestPrefixMatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="155" column="15" lean-forward="true" selection-start-line="151" selection-start-column="13" selection-end-line="155" selection-end-column="15" />
+        <state relative-caret-position="343">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding>
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-            <element signature="e#3170#3171#0" expanded="true" />
-            <element signature="e#3200#3201#0" expanded="true" />
-            <element signature="e#3244#3245#0" expanded="true" />
-            <element signature="e#3318#3319#0" expanded="true" />
-            <element signature="e#3826#3827#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
-            <element signature="e#3278#3279#0" expanded="true" />
-            <element signature="e#4250#4251#0" expanded="true" />
-            <element signature="e#4291#4292#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
+            <element signature="e#2006#2007#0" expanded="true" />
+            <element signature="e#2050#2051#0" expanded="true" />
+            <element signature="e#2124#2125#0" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#2816#2817#0" expanded="true" />
+            <element signature="e#3524#3525#0" expanded="true" />
+            <element signature="e#4676#4677#0" expanded="true" />
+            <element signature="e#4689#4690#0" expanded="true" />
+            <element signature="e#4733#4734#0" expanded="true" />
+            <element signature="e#5568#5569#0" expanded="true" />
+            <element signature="e#5635#5636#0" expanded="true" />
           </folding>
         </state>
       </provider>

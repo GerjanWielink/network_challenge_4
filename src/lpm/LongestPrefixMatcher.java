@@ -14,8 +14,7 @@ public class LongestPrefixMatcher {
                 new Mask(24, 0xFF),
                 new Mask(20, 0xF),
                 new Mask(16, 0xF),
-                new Mask(12, 0xF),
-                new Mask(8, 0xF)
+                new Mask(12, 0xF)
         ));
 
         this.routeSet = new RouteSet(masks);
@@ -27,7 +26,15 @@ public class LongestPrefixMatcher {
      * @return The port number this IP maps to
      */
     public int lookup(int ip) {
+//        System.out.println(ipToHuman(ip));
         return this.routeSet.getPortForIp(ip);
+    }
+
+    private String ipToHuman(int ip) {
+        return (ip >> 24 & 0xff) + "." +
+                (ip >> 16 & 0xff) + "." +
+                (ip >> 8 & 0xff) + "." +
+                (ip & 0xff);
     }
 
     /**
@@ -130,7 +137,7 @@ class RouteSet {
             return children.get(maskedKey).getPortForIp(ip);
         }
 
-        int bestPort;
+        int bestPort = -1;
 
         bestPort = findBestMatch(this.routes, ip);
 
@@ -138,30 +145,34 @@ class RouteSet {
             return bestPort;
         }
 
-        // TODO: Only looks back one level now, could not be enough...
         return searchMatchUpwards(ip);
     }
 
     private int searchMatchUpwards(int ip) {
-        if (this.parent == null || this.parent.last()) {
+        // if there is no parent or the parent is the first byte set we assume no match
+        // as we know there are prefixes so small
+        if (this.parent.root()) {
             return -1;
         }
 
+        // check if the parent has a match for us
         int bestPort = findBestMatch(this.parent.getRoutes(), ip);
 
         if (bestPort != -1) {
             return bestPort;
         }
 
+        // have the parent look into it's own parent if no match is found.
         return this.parent.searchMatchUpwards(ip);
     }
 
-    public boolean last() {
+    // indicates that this is the root set, e.g. split on the first byte.
+    public boolean root() {
         return this.parent == null;
     }
 
     private int findBestMatch(List<Route> routes, int ip) {
-        System.out.println("Best match lookup of size: " + routes.size());
+//        System.out.println("Best match lookup of size: " + routes.size());
 
         for(Route route : routes) {
             if (route.matches(ip)) {
@@ -191,5 +202,10 @@ class Mask {
 
     public int extractByte(int ip) {
         return (ip >> offset) & mask;
+    }
+
+    @Override
+    public String toString() {
+        return this.offset + ";" + Integer.toHexString(mask);
     }
 }
