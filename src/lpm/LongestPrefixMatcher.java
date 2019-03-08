@@ -218,7 +218,7 @@ class RouteSet {
     private List<Mask> childMasks;
     private Mask keyMask;
 
-    public RouteSet(RouteSet parent, List<Mask> keyMasks) {
+    private RouteSet(RouteSet parent, List<Mask> keyMasks) {
         this.parent = parent;
         this.keyMask = keyMasks.get(0);
         this.childMasks = new ArrayList<>(keyMasks);
@@ -228,7 +228,7 @@ class RouteSet {
     /**
      * Constructor for the root level RouteSet
      */
-    public RouteSet(List<Mask> keyMasks) {
+    RouteSet(List<Mask> keyMasks) {
         this(null, keyMasks);
     }
 
@@ -236,7 +236,7 @@ class RouteSet {
      * Add a route to the RouteSet and have it cascade down into it's children recursively until the last mask is reached.
      * @param route Route object
      */
-    public void addRoute(Route route) {
+    void addRoute(Route route) {
         int maskedKey = this.keyMask.extractByte(route.getIp());
 
         if (this.keyMask.getMaxPrefix() >= route.getPrefix()) {
@@ -257,7 +257,7 @@ class RouteSet {
      * @param ip Ip to match
      * @return destination port.
      */
-    public Integer getPortForIp(int ip) {
+    Integer getPortForIp(int ip) {
         int maskedKey = this.keyMask.extractByte(ip);
 
         // If we have a more specific child set we look into that
@@ -306,7 +306,7 @@ class RouteSet {
     /**
      * Recursively sort the routes in the set and those of it's children.
      */
-    public void sortTree() {
+    void sortTree() {
         Collections.sort(this.routes);
 
         children.keySet().forEach(key -> {
@@ -323,17 +323,17 @@ class Mask {
     private int mask;
     private int maxPrefix;
 
-    public Mask(int offset, int mask, int maxPrefix) {
+    Mask(int offset, int mask, int maxPrefix) {
         this.mask = mask;
         this.offset = offset;
         this.maxPrefix = maxPrefix;
     }
 
-    public int extractByte(int ip) {
+    int extractByte(int ip) {
         return (ip >> offset) & mask;
     }
 
-    public int getMaxPrefix() {
+    int getMaxPrefix() {
         return this.maxPrefix;
     }
 
@@ -346,7 +346,7 @@ class Mask {
 /**
  * Route helper class to properly store route, prefix, port
  */
-class Route implements Comparable {
+class Route implements Comparable<Route> {
     private final int relevantPartOfIp;
     private final int ip;
     private final byte prefix;
@@ -376,9 +376,7 @@ class Route implements Comparable {
     }
 
     @Override
-    public int compareTo(Object route) {
-        Route otherRoute = (Route) route;
-
-        return otherRoute.getPrefix() - this.prefix;
+    public int compareTo(Route route) {
+        return route.getPrefix() - this.prefix;
     }
 }

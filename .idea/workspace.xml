@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lpm/LongestPrefixMatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="353" lean-forward="true" selection-start-line="353" selection-end-line="353" />
+            <state relative-caret-position="254">
+              <caret line="220" column="12" selection-start-line="220" selection-start-column="12" selection-end-line="220" selection-end-column="12" />
               <folding>
                 <element signature="e#0#9541#0" expanded="true" />
                 <element signature="e#7309#7310#0" expanded="true" />
@@ -38,6 +38,8 @@
                 <element signature="e#10536#10537#0" expanded="true" />
                 <element signature="e#10580#10581#0" expanded="true" />
                 <element signature="e#10654#10655#0" expanded="true" />
+                <element signature="e#10664#10665#0" expanded="true" />
+                <element signature="e#10718#10719#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,7 +145,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552038364018" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552038808379" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -210,12 +212,12 @@
       <updated>1551947812418</updated>
       <workItem from="1551947813754" duration="19538000" />
       <workItem from="1551977322576" duration="6228000" />
-      <workItem from="1551984251809" duration="13182000" />
+      <workItem from="1551984251809" duration="13624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38948000" />
+    <option name="totallyTimeSpent" value="39390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -356,8 +358,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lpm/LongestPrefixMatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="353" lean-forward="true" selection-start-line="353" selection-end-line="353" />
+        <state relative-caret-position="254">
+          <caret line="220" column="12" selection-start-line="220" selection-start-column="12" selection-end-line="220" selection-end-column="12" />
           <folding>
             <element signature="e#0#9541#0" expanded="true" />
             <element signature="e#7309#7310#0" expanded="true" />
@@ -376,6 +378,8 @@
             <element signature="e#10536#10537#0" expanded="true" />
             <element signature="e#10580#10581#0" expanded="true" />
             <element signature="e#10654#10655#0" expanded="true" />
+            <element signature="e#10664#10665#0" expanded="true" />
+            <element signature="e#10718#10719#0" expanded="true" />
           </folding>
         </state>
       </provider>
