@@ -150,9 +150,10 @@ public class LongestPrefixMatcher {
      * You can use this function to initialize variables.
      */
     public LongestPrefixMatcher() {
+        // Note: the first byte is already extracted into a primitive array by the rootMask
         masks = new ArrayList<>(Arrays.asList(
-                new Mask(16, 0xFF, 20),
-                new Mask(12, 0xF, 32)
+                new Mask(16, 0xFF, 20), // 0000 0000 1111 1111 0000 .... 0000
+                new Mask(12, 0xF, 32) // 0000 0000 0000 0000 1100 0000 .... 0000
         ));
     }
 
@@ -171,6 +172,11 @@ public class LongestPrefixMatcher {
         return -1;
     }
 
+    /**
+     * Helper to format ip to human readable form.
+     * @param ip ip in decimal form
+     * @return human readable ip string.
+     */
     private String ipToHuman(int ip) {
         return (ip >> 24 & 0xff) + "." +
                 (ip >> 16 & 0xff) + "." +
@@ -205,46 +211,6 @@ public class LongestPrefixMatcher {
     }
 }
 
-/**
- * Route helper class to properly store route, prefix, port
- */
-class Route implements Comparable {
-    private final int relevantPartOfIp;
-    private final int ip;
-    private final byte prefix;
-    private final int port;
-
-    public Route(int ip, byte prefix, int port) {
-        this.ip = ip;
-        this.relevantPartOfIp = ip >> (32 - prefix);
-        this.prefix = prefix;
-        this.port = port;
-    }
-
-    public byte getPrefix() {
-        return prefix;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public int getIp() {
-        return this.ip;
-    }
-
-    public boolean matches (int otherIp) {
-        return (otherIp >> (32 - this.prefix)) == relevantPartOfIp;
-    }
-
-    @Override
-    public int compareTo(Object route) {
-        Route otherRoute = (Route) route;
-
-        return otherRoute.getPrefix() - this.prefix;
-    }
-}
-
 class RouteSet {
     private HashMap<Integer, RouteSet> children = new HashMap<>();
     private RouteSet parent;
@@ -259,10 +225,17 @@ class RouteSet {
         this.childMasks.remove(0);
     }
 
+    /**
+     * Constructor for the root level RouteSet
+     */
     public RouteSet(List<Mask> keyMasks) {
         this(null, keyMasks);
     }
 
+    /**
+     * Add a route to the RouteSet and have it cascade down into it's children recursively until the last mask is reached.
+     * @param route Route object
+     */
     public void addRoute(Route route) {
         int maskedKey = this.keyMask.extractByte(route.getIp());
 
@@ -279,33 +252,33 @@ class RouteSet {
         }
     }
 
-    public List<Route> getRoutes() {
-        return this.routes;
-    }
-
+    /**
+     * Looks into the tree of RouteSets for the longest prefix match
+     * @param ip Ip to match
+     * @return destination port.
+     */
     public Integer getPortForIp(int ip) {
         int maskedKey = this.keyMask.extractByte(ip);
 
+        // If we have a more specific child set we look into that
         if (children.containsKey(maskedKey)) {
             return children.get(maskedKey).getPortForIp(ip);
         }
 
-        int bestPort;
-
-        bestPort = findBestMatch(this.routes, ip);
-
-
-        if (bestPort != -1 || this.parent == null) {
-            return bestPort;
-        }
-
-        return this.parent.searchMatchUpwards(ip);
+        // If we are at maximum depth we start looking backwards for the best match
+        return this.searchMatchUpwards(ip);
     }
 
+    /**
+     * Look into your own routes for a match. If none are present look into the routes of your parent
+     * @param ip destination Ip
+     * @return Destination port.
+     */
     private int searchMatchUpwards(int ip) {
         // check if the parent has a match for us
         int bestPort = findBestMatch(this.routes, ip);
 
+        // if we have found a node or we are the root set we return the best port at that point.
         if (bestPort != -1 || this.parent == null) {
             return bestPort;
         }
@@ -315,6 +288,12 @@ class RouteSet {
     }
 
 
+    /**
+     * Find the first (thus best is sorted) match for an ip in a list of routes
+     * @param routes routes to match to.
+     * @param ip destnation ip.
+     * @return destination port. -1 if none is found.
+     */
     private int findBestMatch(List<Route> routes, int ip) {
         for(Route route : routes) {
             if (route.matches(ip)) {
@@ -324,6 +303,9 @@ class RouteSet {
         return -1;
     }
 
+    /**
+     * Recursively sort the routes in the set and those of it's children.
+     */
     public void sortTree() {
         Collections.sort(this.routes);
 
@@ -333,6 +315,9 @@ class RouteSet {
     }
 }
 
+/**
+ * Helper class to extract identifying bits.
+ */
 class Mask {
     private int offset;
     private int mask;
@@ -355,5 +340,45 @@ class Mask {
     @Override
     public String toString() {
         return this.offset + ";" + Integer.toHexString(mask);
+    }
+}
+
+/**
+ * Route helper class to properly store route, prefix, port
+ */
+class Route implements Comparable {
+    private final int relevantPartOfIp;
+    private final int ip;
+    private final byte prefix;
+    private final int port;
+
+    Route(int ip, byte prefix, int port) {
+        this.ip = ip;
+        this.relevantPartOfIp = ip >> (32 - prefix);
+        this.prefix = prefix;
+        this.port = port;
+    }
+
+    byte getPrefix() {
+        return prefix;
+    }
+
+    int getPort() {
+        return port;
+    }
+
+    int getIp() {
+        return this.ip;
+    }
+
+    boolean matches (int otherIp) {
+        return (otherIp >> (32 - this.prefix)) == relevantPartOfIp;
+    }
+
+    @Override
+    public int compareTo(Object route) {
+        Route otherRoute = (Route) route;
+
+        return otherRoute.getPrefix() - this.prefix;
     }
 }
