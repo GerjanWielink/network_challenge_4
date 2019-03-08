@@ -2,8 +2,8 @@
 //
 //import java.util.*;
 //
-//public class LongestPrefixMatcherLegacy {
-//    private List<Roete>[][] routes = new ArrayList[256][257];
+//public class LongestPrefixMatcher {
+//    private List<Route>[][] routes = new ArrayList[256][257];
 //    private Integer[] firstBytes = new Integer[256];
 //    private int routesRead = 0;
 //    private RouteSet routeSet;
@@ -11,7 +11,7 @@
 //  /**
 //   * You can use this function to initialize variables.
 //   */
-//    public LongestPrefixMatcherLegacy() {
+//    public LongestPrefixMatcher() {
 //        for(int i = 0; i < 256; i++) {
 //            routes[i][256] = new ArrayList<>();
 //        }
@@ -46,10 +46,10 @@
 //       return findBestMatch(routes[firstByteOfIp][256], ip);
 //    }
 //
-//    private int findBestMatch(List<Roete> roetes, int ip) {
-//        for(Roete roete : roetes) {
-//            if (roete.matches(ip)) {
-//                return  roete.getPort();
+//    private int findBestMatch(List<Route> routes, int ip) {
+//        for(Route route : routes) {
+//            if (route.matches(ip)) {
+//                return  route.getPort();
 //            }
 //        }
 //
@@ -69,20 +69,20 @@
 //
 //       firstBytes[firstByte] = firstByte;
 //
-//       Roete currentRoete = new Roete(ip, prefixLength, portNumber);
+//       Route currentRoute = new Route(ip, prefixLength, portNumber);
 //
 //       if(routes[firstByte][secondByte] == null) {
 //           routes[firstByte][secondByte] = new ArrayList<>();
 //       }
 //
-//       routes[firstByte][secondByte].add(currentRoete);
-//       routes[firstByte][256].add(currentRoete);
+//       routes[firstByte][secondByte].add(currentRoute);
+//       routes[firstByte][256].add(currentRoute);
 //
 //       routesRead++;
 //
 //       if(routesRead == 420972) {
-//           for(List<Roete>[] routesList: routes) {
-//               for(List<Roete> routesListList: routesList) {
+//           for(List<Route>[] routesList: routes) {
+//               for(List<Route> routesListList: routesList) {
 //                   if(routesListList == null) {
 //                       continue;
 //                   }
@@ -94,7 +94,7 @@
 //}
 //
 ///**
-// * Roete helper class to properly store route, prefix, port
+// * Route helper class to properly store route, prefix, port
 // */
 //class Roete implements Comparable {
 //    private final int releventPartOfIp;
@@ -127,8 +127,8 @@
 //
 //    @Override
 //    public int compareTo(Object route) {
-//        Roete otherRoete = (Roete) route;
+//        Route otherRoute = (Route) route;
 //
-//        return otherRoete.getPrefix() - this.prefix;
+//        return otherRoute.getPrefix() - this.prefix;
 //    }
 //}
